@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> RoopHause Salon </title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+    #testimonialCarousel {
+      background: #000000;
+      padding: 60px 20px 80px;
+    }
+
+    .testimonial-content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 60px;
+    }
+
+    .stars {
+      font-size: 20px;
+      letter-spacing: 5px;
+      color: #b5935a;
+      margin-bottom: 24px;
+    }
+
+    .testimonial-content blockquote {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      font-weight: 300;
+      font-style: italic;
+      color: #ffffff;
+      line-height: 1.7;
+      margin: 0 0 24px 0;
+      border: none;
+      padding: 0;
+    }
+
+    .client-name {
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #7fcb81;
+      margin: 0;
+    }
+
+    #testimonialCarousel .carousel-indicators button {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #555;
+      border: none;
+      opacity: 1;
+    }
+
+    #testimonialCarousel .carousel-indicators button.active {
+      background-color: #7fcb81;
+    }
+
+    #testimonialCarousel .carousel-control-prev,
+    #testimonialCarousel .carousel-control-next {
+      width: 50px;
+      opacity: 1;
+    }
+
+    #testimonialCarousel .carousel-control-prev-icon,
+    #testimonialCarousel .carousel-control-next-icon {
+      width: 24px;
+      height: 24px;
+    }
+</style>
+
+</head>
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">RoopHaus</div>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+            <li class="dropdown">
+                <a href="services.html">Services ▾</a>
+
+                <ul class="dropdown-menu">
+                    <li><a href="home-service.html">Home Service</a></li>
+                    <li><a href="onsite-service.html">Onsite Service</a></li>
+                </ul>
+
+            </li>
+
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    </nav>
+
+  <main>
+
+<header>
+ <h1>Home Beauty Services</h1>
+</header>       
+
+ <h2 class="service-title">Available Home Services</h2>
+    <section class="services" aria-label="Home service list">
+ 
+      <article class="card">
+        <img src="images/home-service/bridemakeup.jpg" alt="" />
+        <div class="card-body">
+          <h3>Bridal Makeup at Home</h3>
+          <p>Get your complete bridal look done at home. We bring professional tools, top-quality products, and an expert artist to you.</p>
+          <a href="contact.html" class="btn-contact">Book Now</a>
+        </div>
+      </article>
+ 
+      <article class="card">
+        <img src="images/home-service/facialservice.jpeg" alt="" />
+        <div class="card-body">
+          <h3>Facial &amp; Skin Care</h3>
+          <p>Relaxing facials using herbal and natural products right in your own home — great skin without stepping out.</p>
+          <a href="contact.html" class="btn-contact">Book Now</a>
+        </div>
+      </article>
+ 
+      <article class="card">
+        <img src="images/home-service/mehndiservice.jpg" alt="" />
+        <div class="card-body">
+          <h3>Mehndi at Home</h3>
+          <p>Beautiful traditional and modern mehndi designs applied at your home for weddings, Eid, and all celebrations.</p>
+          <a href="contact.html" class="btn-contact">Book Now</a>
+        </div>
+      </article>
+ 
+      <article class="card">
+        <img src="images/home-service/haircolor.jpg" alt="" />
+        <div class="card-body">
+          <h3>Hair Styling &amp; Care</h3>
+          <p>From blow-dries to hair treatments — our stylist comes equipped to give you a full salon experience at home.</p>
+          <a href="contact.html" class="btn-contact">Book Now</a>
+        </div>
+      </article>
+ 
+      <article class="card">
+        <img src="images/home-service/makeup.jpg" alt="" />
+        <div class="card-body">
+          <h3>Party Makeup</h3>
+          <p>Looking glam for an event or dinner? Our makeup artist arrives at your door ready to create your perfect look.</p>
+          <a href="contact.html" class="btn-contact">Book Now</a>
+        </div>
+      </article>
+ 
+      <article class="card">
+        <img src="images/home-service/threading.jpeg" alt="" />
+        <div class="card-body">
+          <h3>Waxing &amp; Threading</h3>
+          <p>Clean and quick waxing and threading services performed hygienically in the comfort of your own space.</p>
+          <a href="contact.html" class="btn-contact">Book Now</a>
+        </div>
+      </article>
+ 
+    </section>
+    </main><div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3"></button>
+    </div>
+
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <div class="testimonial-content">
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <blockquote>"The home service was absolutely incredible. My stylist arrived on time, was professional, and my blowout lasted 3 days!"</blockquote>
+          <p class="client-name">— Ayesha K., Karachi</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="testimonial-content">
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <blockquote>"I got my bridal makeup done at the salon and I have never felt more beautiful. Every detail was perfect."</blockquote>
+          <p class="client-name">— Sara M., Defence</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="testimonial-content">
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <blockquote>"Booked the mehndi home service for Eid. The artist was so talented and the patterns were breathtaking. Highly recommend!"</blockquote>
+          <p class="client-name">— Nadia R., Clifton</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="testimonial-content">
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <blockquote>"The facial at home was so relaxing. Same quality as being at the salon, but in my own comfortable space."</blockquote>
+          <p class="client-name">— Zara T., Gulshan</p>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+  </div>
+<footer>
+        <div class="footer-content">
+             <div class="footer-section">
+                <img src="images/whitefontlogo.jpg" alt="" width="140px" height="45px">
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📍 Karachi, Sindh, Pakistan</p>
+                <p>📞 +92 21 1234 5678</p>
+                <p>📧 info@roophause.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hours</h3>
+                <p>Mon-Fri: 9:00 AM - 8:00 PM</p>
+                <p>Sat: 10:00 AM - 6:00 PM</p>
+                <p>Sun: 11:00 AM - 5:00 PM</p>
+            </div>
+        <hr>
+        <div class="footer-bottom">
+            <p>&copy; 2026 RoopHause. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>        function toggleMenu() {
+            document.querySelector('nav ul').classList.toggle('show');
+        }
+    </script>
+
+</body>
+</html>
