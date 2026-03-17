@@ -2,29 +2,257 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Frequently Asked Questions</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-color: #4B6F44;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f4f7f6;
+        }
+
+        .banner {
+            width: 100%;
+            height: 350px;
+            background-image: url("images/faqbanner.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-size 3s ease;
+        }
+
+        .faqhead {
+            padding-top: 100px;
+            text-align: center;
+            font-size: 60px;
+            color: black;
+            font-weight: initial;
+        }
+
+        .faqline {
+            padding-top: 20px;
+            text-align: center;
+            font-size: 30px;
+            color: black;
+        }
+
+        #accordion {
+            width: 90%;
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+
+        .ui-state-active {
+            background-color: var(--primary-color) !important;
+            border: 1px solid var(--primary-color) !important;
+        }
+
+        .faqmain {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1.2s ease, transform 1.2s ease;
+        }
+
+        /* media querries */
+        @media(max-width:1200px) {
+            .faqhead {
+                font-size: 50px;
+            }
+
+            .faqline {
+                font-size: 25px;
+            }
+
+            #accordion {
+                width: 95%;
+            }
+        }
+
+        @media(max-width:992px) {
+            .nav-links {
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                border-top: 1px solid #ddd;
+                display: none;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .dropdown:hover .dropdown-menu {
+                position: static;
+            }
+
+            .faqhead {
+                font-size: 45px;
+                padding-top: 70px;
+            }
+
+            .faqline {
+                font-size: 22px;
+            }
+
+            #accordion {
+                width: 90%;
+            }
+        }
+
+        @media(max-width:768px) {
+            .banner {
+                height: 300px;
+            }
+
+            .faqhead {
+                font-size: 38px;
+            }
+
+            .faqline {
+                font-size: 20px;
+            }
+
+            #accordion {
+                margin: 30px auto;
+            }
+        }
+
+        @media(max-width:576px) {
+            .banner {
+                height: 250px;
+            }
+
+            .faqhead {
+                font-size: 28px;
+                padding-top: 50px;
+            }
+
+            .faqline {
+                font-size: 16px;
+            }
+
+            #accordion {
+                margin: 20px auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">about</a></li>
+    <nav class="navbar">
+
+        <div class="logo">RoopHaus</div>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="about.html">About</a></li>
+
             <li class="dropdown">
-                <a href="services.html">Services</a>
+                <a href="services.html">Services ▾</a>
+
                 <ul class="dropdown-menu">
                     <li><a href="home-service.html">Home Service</a></li>
                     <li><a href="onsite-service.html">Onsite Service</a></li>
                 </ul>
+
             </li>
-            <li><a href="product.html">Product</a></li>
+
             <li><a href="faqs.html">FAQs</a></li>
-            <li><a href="contact.html">contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
+
         </ul>
+
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+
     </nav>
+    <!-- faq banner -->
+    <div class="banner">
+        <h1 class="faqhead">Frequently Asked Questions</h1>
+        <h4 class="faqline">About RoopHaus - Female Beauty Salon</h4>
+    </div>
+
+    <!-- faq kai main questions ka area -->
+    <div class="faqmain">
+        <div id="accordion">
+            <h3>1. What services does RoopHaus offer?</h3>
+            <div>
+                <p>We offer a comprehensive range of beauty treatments, including hair styling, professional makeup,
+                    skincare facials, manicures, pedicures, waxing, and specialized bridal packages. Whether you visit
+                    our salon or request a home visit, you receive the same premium quality.</p>
+            </div>
+
+            <h3>2. How do I book an appointment with RoopHaus?</h3>
+            <div>
+                <p>Booking is simple! Just fill out the appointment form on our website with your details and preferred
+                    services. Once submitted, our team will review your request and contact you shortly via phone or
+                    WhatsApp to confirm the time, date, and location.</p>
+            </div>
+
+            <h3>3. Do you provide services at my home?</h3>
+            <div>
+                <p>Yes! We bring the salon experience to your doorstep. You can enjoy almost all our services in the
+                    comfort of your own home. Simply select the "Home Service" option while filling out our booking
+                    form.</p>
+            </div>
+
+            <h3>4. How soon will you contact me after I fill out the form?</h3>
+            <div>
+                <p>We aim to respond to all booking requests as quickly as possible. Generally, you can expect a call or
+                    message from our team within 2 to 4 business hours to finalize your appointment.</p>
+            </div>
+
+            <h3>5. Can I change or cancel my appointment?</h3>
+            <div>
+                <p>We understand that plans change! If you need to reschedule or cancel, please let us know at least 24
+                    hours in advance. You can do this by replying to our confirmation message or calling our support
+                    line.</p>
+            </div>
+
+            <h3>6. What safety and hygiene protocols do you follow?</h3>
+            <div>
+                <p>Your safety is our priority. Our professionals use sanitized tools, disposable kits where applicable,
+                    and follow strict hygiene protocols. For home services, our staff arrives with a fresh kit to ensure
+                    a clean and safe environment.</p>
+            </div>
+
+            <h3>7. Do you offer bridal or group bookings?</h3>
+            <div>
+                <p>Absolutely! We love being part of your special occasions. Whether it's for a bride, a bridesmaid, or
+                    a group of friends for a party, we offer customized packages. Just mention "Bridal" or "Group
+                    Booking" in the notes section of our form.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#accordion").accordion();
+        });
+
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('show');
+        }
+    </script>
+
 </body>
+
 </html>
