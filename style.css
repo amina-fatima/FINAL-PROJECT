@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 body {
@@ -16,58 +17,61 @@ body {
   --primary-color: #4B6F44;
 }
 
-nav {
-    background: #000000;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    justify-content: space-between;
-}
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-}
 
-nav ul li {
-    position: relative
-}
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-nav ul li a {
-    display: block;
-    padding: 16px 18px;
-    text-decoration: none;
-    color: var(--primary-color);
-    font-family: sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    
-}
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #4B6F44;
+        }
 
-nav ul li a:hover {
-    color: #fff;
-    background: #7fcb81
-}
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #fff;
-    border: 1px solid #ddd;
-    min-width: 160px;
-    z-index: 10
-}
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+        }
 
-.dropdown:hover .dropdown-menu {
-    display: block
-}
+        .dropdown {
+            position: relative;
+        }
 
-.dropdown-menu li a {
-    padding: 10px 16px
-}
-footer {
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background: white;
+            list-style: none;
+            padding: 10px;
+            top: 30px;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        footer {
     background: #000;
     color: white;
     padding: 50px 20px 0;

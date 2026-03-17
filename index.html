@@ -4,13 +4,936 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    
+    <title>RoopHaus</title>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.2/themes/base/jquery-ui.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        /* NAVBAR */
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #4B6F44;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background: white;
+            list-style: none;
+            padding: 10px;
+            top: 30px;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+        }
+
+        .tag {
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #4B6F44;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 58px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .title em {
+            color: #4B6F44;
+        }
+
+        .intro {
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 420px;
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 50px;
+        }
+
+        .btn1 {
+            background: black;
+            color: #fff;
+            padding: 14px 32px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn1:hover {
+            background: #4B6F44;
+        }
+
+        .btn2 {
+            background: transparent;
+            padding: 13px 32px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: black;
+            border: 1.5px solid black;
+            text-decoration: none;
+        }
+
+        .btn2:hover {
+            background: #4B6F44;
+            color: white;
+        }
+
+
+
+        .stats {
+            display: flex;
+            gap: 40px;
+            padding-top: 40px;
+            border-top: 1px solid #ddd;
+        }
+
+        .number {
+            font-size: 38px;
+            font-weight: 700;
+        }
+
+        .number span {
+            color: #4B6F44;
+        }
+
+        .label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+
+        /* HERO RIGHT */
+
+        .right {
+            position: relative;
+            background: #ede9e3;
+            overflow: hidden;
+        }
+
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+
+        /* TEAM */
+
+        .team-section {
+            background: #fff;
+            text-align: center;
+            padding: 80px 40px;
+        }
+
+        .team-label {
+            font-size: 13px;
+            color: #4B6F44;
+            letter-spacing: 3px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .team-heading {
+            font-size: 42px;
+            margin-bottom: 50px;
+            line-height: 1.3;
+        }
+
+        .team-cards {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .team-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .team-card img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #4B6F44;
+            margin-bottom: 15px;
+            transition: transform .3s;
+        }
+
+        .team-card img:hover {
+            transform: scale(1.05);
+        }
+
+        .team-card h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .team-role {
+            font-size: 14px;
+            color: #4B6F44;
+            letter-spacing: 1px;
+        }
+
+        .team-para {
+            font-size: 16px;
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        /* services css */
+
+        /* onsite service */
+        .homepageservices {
+            background-color: #FAF9F6;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 50px;
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 50px;
+
+        }
+
+        .o-img {
+            background-image: url('images/onsiteimg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            flex: 1;
+            height: 400px;
+            border-radius: 8px;
+        }
+
+        .onsitecontent {
+            background-image: url(images/hsbg.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            flex: 1;
+            text-align: justify;
+            padding: 15px;
+            padding-left: 50px;
+            height: 420px;
+            padding-bottom: 30px;
+        }
+
+        .onsitecontent h3 {
+            margin-top: 15px;
+            margin-left: 15px;
+            margin-bottom: 30px;
+            /* font-size: 2.5rem; */
+            line-height: 1.2;
+            color: var(--primary-color);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .onsitecontent p {
+            padding: 15px;
+            padding-right: 25px;
+            color: black;
+
+        }
+
+
+        /* home service */
+        .h-img {
+            background-image: url('images/homeimg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            flex: 1;
+            height: 400px;
+            border-radius: 8px;
+        }
+
+
+
+        .services-section {
+            background-color: #ffffff;
+            padding: 80px 60px;
+            text-align: center;
+        }
+
+        .services-header h2 {
+            font-size: 42px;
+            color: #000000;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            font-weight: initial;
+            font-size: 50px;
+
+        }
+
+        .services-header p {
+            font-size: 18px;
+            color: #555555;
+            margin-bottom: 50px;
+        }
+
+        .mainservices {
+            background-color:  #4B6F44 ;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+            width: fit-content;
+            margin: 20px auto 60px auto;
+        }
+
+        .mainservices:hover {
+            background-color: #ffffff;
+            color: #4B6F44;
+            font-weight: bold;
+        }
+
+
+
+
+        /* FAQ */
+
+        #accordion {
+            width: 100%;
+            margin: 50px auto;
+        }
+
+        .ui-state-active {
+            background: #4B6F44 !important;
+            border: 1px solid #4B6F44 !important;
+        }
+
+        .faqmain {
+            width: 90%;
+            margin: auto;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1.2s ease, transform 1.2s ease;
+        }
+
+        .faqhead {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            font-size: 60px;
+            text-align: center;
+        }
+
+        .faqline {
+            padding-top: 20px;
+            display: flex;
+            justify-content: center;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .faq-btn {
+            background: #4B6F44;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+        }
+
+
+
+
+        /* TABLET */
+
+        @media (max-width:1024px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .right {
+                height: 400px;
+            }
+
+            .left {
+                text-align: center;
+                align-items: center;
+            }
+
+            .stats {
+                justify-content: center;
+            }
+
+            .homepageservices {
+                flex-direction: column;
+            }
+
+            .onsitecontent {
+                text-align: center;
+            }
+
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width:768px) {
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                display: none;
+                padding: 20px 0;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .title {
+                font-size: 36px;
+            }
+
+            .team-heading {
+                font-size: 30px;
+            }
+
+            .services-header h2 {
+                font-size: 36px;
+            }
+
+            .faqhead {
+                font-size: 40px;
+            }
+
+            .faqline {
+                font-size: 20px;
+            }
+
+        }
+
+
+        /* / LARGE SCREENS */
+
+        @media (min-width:2000px) {
+
+            .stats {
+                justify-content: center;
+            }
+
+            .left {
+                align-items: center;
+                text-align: center;
+            }
+
+        }
+
+
+        /* Desktop */
+        @media (max-width: 1200px) {
+            .services-section {
+                padding: 60px 40px;
+            }
+
+            .services-header h2 {
+                font-size: 42px;
+            }
+
+            .homepageservices {
+                padding: 40px;
+                gap: 30px;
+            }
+
+            .onsitecontent {
+                padding-left: 35px;
+                height: auto;
+            }
+
+            .o-img,
+            .h-img {
+                height: 350px;
+            }
+        }
+
+        /* Laptop  */
+        @media (max-width: 992px) {
+            .services-section {
+                padding: 50px 30px;
+            }
+
+            .services-header h2 {
+                font-size: 36px;
+            }
+
+            .services-header p {
+                font-size: 16px;
+                margin-bottom: 35px;
+            }
+
+            .homepageservices {
+                padding: 30px;
+                gap: 20px;
+                margin-top: 30px;
+            }
+
+            .onsitecontent {
+                padding-left: 25px;
+                padding: 15px 20px;
+                height: auto;
+            }
+
+            .onsitecontent h3 {
+                font-size: 1.3rem;
+                margin-bottom: 20px;
+            }
+
+            .o-img,
+            .h-img {
+                height: 300px;
+            }
+        }
+
+        /* Tablet  */
+        @media (max-width: 786px) {
+            .services-section {
+                padding: 40px 20px;
+            }
+
+            .services-header h2 {
+                font-size: 30px;
+            }
+
+            .services-header p {
+                font-size: 15px;
+                margin-bottom: 25px;
+            }
+
+            .homepageservices {
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                margin-top: 20px;
+            }
+
+            .homepageservices:nth-child(2) {
+                flex-direction: column;
+            }
+
+            .homepageservices:nth-child(3) {
+                flex-direction: column-reverse;
+            }
+
+            .o-img,
+            .h-img {
+                width: 100%;
+                height: 250px;
+                flex: none;
+            }
+
+            .onsitecontent {
+                flex: none;
+                width: 100%;
+                height: auto;
+                padding: 20px;
+                padding-left: 20px;
+                box-sizing: border-box;
+            }
+
+            .onsitecontent h3 {
+                font-size: 1.2rem;
+                margin-left: 0;
+                margin-bottom: 15px;
+            }
+
+            .onsitecontent p {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .mainservices {
+                margin: 15px auto 30px auto;
+                font-size: 14px;
+            }
+        }
+
+        /* Mobile <786px */
+        @media (max-width: 480px) {
+            .services-section {
+                padding: 30px 15px;
+            }
+
+            .services-header h2 {
+                font-size: 24px;
+                letter-spacing: 0.5px;
+            }
+
+            .services-header p {
+                font-size: 13px;
+                margin-bottom: 20px;
+            }
+
+            .homepageservices {
+                flex-direction: column;
+                padding: 15px;
+                gap: 15px;
+                margin-top: 15px;
+            }
+
+            .homepageservices:nth-child(3) {
+                flex-direction: column-reverse;
+            }
+
+            .o-img,
+            .h-img {
+                height: 200px;
+            }
+
+            .onsitecontent {
+                padding: 15px;
+            }
+
+            .onsitecontent h3 {
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+
+            .onsitecontent p {
+                font-size: 13px;
+                padding: 8px;
+            }
+
+            .mainservices {
+                font-size: 13px;
+                padding: 10px 18px;
+                margin: 10px auto 20px auto;
+            }
+        }
+    </style>
 </head>
 
+
 <body>
-    <footer>
+
+
+
+    <nav class="navbar">
+
+        <div class="logo">RoopHaus</div>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+            <li class="dropdown">
+                <a href="services.html">Services ▾</a>
+
+                <ul class="dropdown-menu">
+                    <li><a href="home-service.html">Home Service</a></li>
+                    <li><a href="onsite-service.html">Onsite Service</a></li>
+                </ul>
+
+            </li>
+
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    </nav>
+
+
+<!-- home main section -->
+    <div class="hero">
+
+        <div class="left">
+
+            <p class="tag">Premium Beauty Studio</p>
+
+            <h1 class="title">
+                Where Beauty<br>
+                Meets <em>Artistry & Style</em>
+            </h1>
+
+            <p class="intro">
+                Welcome to Roophaus — a salon where every visit feels like a ritual.
+                Our skilled stylists blend precision and passion.
+            </p>
+
+            <div class="buttons">
+                <a href="contact.html" class="btn1">Book a Session</a>
+                <a href="services.html" class="btn2">Our Services</a>
+            </div>
+
+            <div class="stats">
+
+                <div>
+                    <p class="number"><span>8+</span></p>
+                    <p class="label">Years Experience</p>
+                </div>
+
+                <div>
+                    <p class="number"><span>3K+</span></p>
+                    <p class="label">Happy Clients</p>
+                </div>
+
+                <div>
+                    <p class="number"><span>20+</span></p>
+                    <p class="label">Expert Stylists</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="right">
+            <img class="image" src="images/g2.jpg">
+        </div>
+
+    </div>
+
+
+<!-- about section -->
+    <section class="team-section">
+
+        <p class="team-label">MEET OUR LEADERS</p>
+
+        <h2 class="team-heading">
+            Specialists With Many Years <br> Of Experience
+        </h2>
+
+        <div class="team-cards">
+
+            <div class="team-card">
+                <img src="images/aiman.jpeg">
+                <h3>Ms. Aiman</h3>
+                <p class="team-role">Founder</p>
+            </div>
+
+            <div class="team-card">
+                <img src="images/amina.jpeg">
+                <h3>Ms. Amina</h3>
+                <p class="team-role">Founder</p>
+            </div>
+
+        </div>
+
+        <p class="team-para">
+            At RoopHaus, our founders bring years of professional expertise and a deep passion for beauty.
+            With a commitment to excellence and a love for empowering every client, they have built a salon
+            that blends skill, care, and elegance. From bridal transformations to everyday glam,
+            our team is dedicated to making every visit a truly luxurious experience.
+
+        </p>
+
+    </section>
+
+    <!-- Services Section -->
+
+    <section class="services-section">
+
+        <div class="services-header">
+            <h2>Our Services</h2>
+            <p>Experience luxury beauty treatments — at our salon or your doorstep</p>
+        </div>
+
+
+        <div class="homepageservices">
+            <div class="o-img">
+
+            </div>
+            <div class="onsitecontent">
+                <h3>OUR ONSITE- SERVICES </h3>
+                <p>
+                    Step into our salon for an immersive beauty experience where professional expertise meets a tranquil
+                    atmosphere. Our onsite services provide a complete escape from the daily grind, offering a level of
+                    precision and care that only a fully-equipped professional environment can deliver. From advanced
+                    hair treatments and custom coloring using industry-leading products to relaxing facials and
+                    specialized nail care, every service is performed by skilled specialists dedicated to your
+                    transformation. Enjoy the luxury of our high-end styling stations, soothing ambiance, and the
+                    undivided attention of our experts, ensuring you leave feeling refreshed and looking your absolute
+                    best.
+                </p>
+                <a href="services.html" class="mainservices">Explore Our Onsite Services</a>
+
+
+
+            </div>
+        </div>
+
+        <!-- homeservice -->
+        <div class="homepageservices">
+            <div class="onsitecontent">
+                <h3>OUR HOME- SERVICES </h3>
+                <p>
+                    We Bring the luxury of the salon directly to your door with our premium onsite beauty services.
+                    Whether
+                    you're prepping for a special event, hosting a pamper party, or simply prefer the comfort of your
+                    own home, our expert stylists provide a full range of professional treatments tailored to your
+                    schedule. From precision hair styling to flawless makeup application, we deliver a high-end
+                    experience without the commute [3, 4]. We arrive fully equipped to transform your space into a
+                    private sanctuary, ensuring you look and feel your absolute best in the setting where you're most
+                    relaxed.
+                </p>
+                <a href="services.html" class="mainservices">Explore Our Home Services</a>
+
+            </div>
+            <div class="h-img">
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </section>
+
+
+
+<!-- faq  -->
+    <section>
+
+        <h1 class="faqhead">Frequently Asked Questions</h1>
+        <h4 class="faqline">About RoopHaus - Female Beauty Salon</h4>
+
+        <div class="faqmain">
+
+            <div id="accordion">
+
+                <h3>1. What services does RoopHaus offer?</h3>
+
+                <div>
+                    <p>
+                        We offer hair styling, makeup, skincare, manicure,
+                        pedicure and bridal packages.
+                    </p>
+                </div>
+
+                <h3>2. How do I book an appointment?</h3>
+
+                <div>
+                    <p>
+                        Fill out the appointment form and our team will contact you.
+                    </p>
+                </div>
+
+                <h3>3. Do you provide home services?</h3>
+
+                <div>
+                    <p>
+                        Yes, we provide salon services at your home.
+                    </p>
+                </div>
+
+            </div>
+
+            <a href="faqs.html" class="faq-btn">View All FAQs</a>
+
+        </div>
+
+    </section>
+
+  <footer>
         <div class="footer-content">
              <div class="footer-section">
                 <img src="images/whitefontlogo.jpg" alt="" width="140px" height="45px">
@@ -21,7 +944,8 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="services.html">Services</a></li>
+                     <li><a href="services.html">Services</a></li>
+
                 </ul>
             </div>
             <div class="footer-section">
@@ -36,20 +960,39 @@
                 <p>Sat: 10:00 AM - 6:00 PM</p>
                 <p>Sun: 11:00 AM - 5:00 PM</p>
             </div>
-            <div class="footer-section">
-        <h3>Information</h3>
-        <ul>
-             <li><a href="faqs.html">FAQs</a></li>
-            <li><a href="terms.html">Terms n Conditions</a></li>
-            <li><a href="privacypolicy.html">Privacy policy</a></li>
-        </ul>
-      </div>
         </div>
         <hr>
         <div class="footer-bottom">
             <p>&copy; 2026 RoopHause. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
+
+    <script>
+
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("show");
+        }
+
+        $(function () {
+
+            $("#accordion").accordion();
+
+            setTimeout(function () {
+
+                $(".faqmain").css({
+                    "opacity": "1",
+                    "transform": "translateY(0)"
+                });
+
+            }, 100);
+
+        });
+
+    </script>
+
 </body>
 
 </html>
