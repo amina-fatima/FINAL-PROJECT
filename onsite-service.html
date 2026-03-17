@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -106,29 +105,112 @@
                 grid-template-columns: 1fr;
             }
         }
-    </style>
+
+    
+    #testimonialCarousel {
+      background: #000000;
+      padding: 60px 20px 80px;
+    }
+    
+
+    .testimonial-content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 60px;
+    }
+
+    .stars {
+      font-size: 20px;
+      letter-spacing: 5px;
+      color: #b5935a;
+      margin-bottom: 24px;
+    }
+
+    .testimonial-content blockquote {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      font-weight: 300;
+      font-style: italic;
+      color: #ffffff;
+      line-height: 1.7;
+      margin: 0 0 24px 0;
+      border: none;
+      padding: 0;
+    }
+
+    .client-name {
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #7fcb81;
+      margin: 0;
+    }
+
+    #testimonialCarousel .carousel-indicators button {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #555;
+      border: none;
+      opacity: 1;
+    }
+
+    #testimonialCarousel .carousel-indicators button.active {
+      background-color: #7fcb81;
+    }
+
+    #testimonialCarousel .carousel-control-prev,
+    #testimonialCarousel .carousel-control-next {
+      width: 50px;
+      opacity: 1;
+    }
+
+    #testimonialCarousel .carousel-control-prev-icon,
+    #testimonialCarousel .carousel-control-next-icon {
+      width: 24px;
+      height: 24px;
+    }
+    
+    @media (max-width: 900px) {
+      .services { 
+        grid-template-columns: repeat(2, 1fr);
+     }
+      .footer-content {
+         grid-template-columns: 1fr 1fr;
+         }
+    }
+ 
+    @media (max-width: 576px) {
+      .hero h1 { 
+        font-size: 48px; 
+    }
+      .service-title { 
+        font-size: 36px;
+     }
+      .services { 
+        grid-template-columns: 1fr; 
+    }
+      .testimonial-content { 
+        padding: 0 20px;
+     }
+      .footer-content { 
+        grid-template-columns: 1fr; 
+    }
+    }
+  </style>
 </head>
-
 <body>
-
-    <nav class="navbar">
-
-        <div class="logo">RoopHaus</div>
-
-        <ul class="nav-links" id="navLinks">
-
-            <li><a href="index.html">Home</a></li>
-
-            <li><a href="about.html">About</a></li>
-
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">about</a></li>
             <li class="dropdown">
-                <a href="services.html">Services ▾</a>
-
+                <a href="services.html">Services</a>
                 <ul class="dropdown-menu">
                     <li><a href="home-service.html">Home Service</a></li>
                     <li><a href="onsite-service.html">Onsite Service</a></li>
                 </ul>
-
             </li>
 
             <li><a href="faqs.html">FAQs</a></li>
@@ -297,9 +379,150 @@
 
     </div>
 
+
+    <h2 class="service-title">Our Salon Services</h2>
+ 
+  <div class="services">
+ 
+    <div class="card">
+      <img src="images/on-siteservices/hairwash2.jpg" alt="Hair Wash & Treatment">
+      <div class="card-body">
+        <h3>Hair Wash & Treatment</h3>
+        <p>Indulge in a deep cleansing hair wash followed by a nourishing treatment. Our experts restore shine, softness, and health to every strand.</p>
+        <a href="contact.html" class="btn-contact">Book Now</a>
+      </div>
+    </div>
+ 
+    <div class="card">
+      <img src="images/on-siteservices/facial.jpeg" alt="Facial & Skin Care">
+      <div class="card-body">
+        <h3>Facial & Skin Care</h3>
+        <p>Rejuvenate your skin with our range of professional facials and skin treatments, performed by certified estheticians right in our salon.</p>
+        <a href="contact.html" class="btn-contact">Book Now</a>
+      </div>
+    </div>
+ 
+    <div class="card">
+      <img src="images/on-siteservices/softglammakeup.jpeg" alt="Soft Glam Makeup">
+      <div class="card-body">
+        <h3>Soft Glam Makeup</h3>
+        <p>Achieve a flawless, natural glow with our soft glam makeup service. Perfect for everyday elegance, lunch dates, or any special occasion.</p>
+        <a href="contact.html" class="btn-contact">Book Now</a>
+      </div>
+    </div>
+ 
+    <div class="card">
+      <img src="images/on-siteservices/partymakeup.jpeg" alt="Party Makeup">
+      <div class="card-body">
+        <h3>Party Makeup</h3>
+        <p>Get ready to turn heads! Our party makeup looks are bold, vibrant, and long-lasting — created by expert artists for every type of event.</p>
+        <a href="contact.html" class="btn-contact">Book Now</a>
+      </div>
+    </div>
+ 
+    <div class="card">
+      <img src="images/on-siteservices/bridalmakeup.jpeg" alt="Bridal Makeup">
+      <div class="card-body">
+        <h3>Bridal Makeup</h3>
+        <p>Look and feel your most radiant on your special day. Our bridal specialists create timeless, long-lasting looks tailored to your style and skin tone.</p>
+        <a href="contact.html" class="btn-contact">Book Now</a>
+      </div>
+    </div>
+ 
+    <div class="card">
+      <img src="images/on-siteservices/mehndi.jpeg" alt="Mehndi / Henna Art">
+      <div class="card-body">
+        <h3>Mehndi / Henna Art</h3>
+        <p>Celebrate your special occasions with intricate, beautifully designed mehndi. Our skilled henna artists create both traditional and contemporary patterns.</p>
+        <a href="contact.html" class="btn-contact">Book Now</a>
+      </div>
+    </div>
+ 
+    <div class="card">
+      <img src="images/on-siteservices/menipedi.jpeg" alt="Manicure & Pedicure">
+      <div class="card-body">
+        <h3>Manicure & Pedicure</h3>
+        <p>Treat your hands and feet to a luxurious nail care session at our salon. Sit back, relax, and let our nail experts do the rest.</p>
+        <a href="contact.html" class="btn-contact">Book Now</a>
+      </div>
+    </div>
+ 
+    <div class="card">
+      <img src="images/on-siteservices/spa.jpeg" alt="Spa & Relaxation">
+      <div class="card-body">
+        <h3>Spa & Relaxation</h3>
+        <p>Melt away stress with our full spa experience. From body wraps to aromatherapy massages — pure relaxation awaits you at our salon.</p>
+        <a href="contact.html" class="btn-contact">Book Now</a>
+      </div>
+    </div>
+ 
+    <div class="card">
+      <img src="images/on-siteservices/hairwash.jpg" alt="Deep Conditioning">
+      <div class="card-body">
+        <h3>Deep Conditioning</h3>
+        <p>Restore your hair's health and brilliance with our in-salon deep conditioning and keratin treatments using premium professional products.</p>
+        <a href="contact.html" class="btn-contact">Book Now</a>
+      </div>
+    </div>
+ 
+  </div>
+  <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+ 
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3"></button>
+    </div>
+ 
+    <div class="carousel-inner">
+ 
+      <div class="carousel-item active">
+        <div class="testimonial-content">
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <blockquote>"The bridal makeup was absolutely stunning. My stylist was professional and the look lasted all night!"</blockquote>
+          <p class="client-name">— Ayesha K., Karachi</p>
+        </div>
+      </div>
+ 
+      <div class="carousel-item">
+        <div class="testimonial-content">
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <blockquote>"I got my facial done at the salon and I have never felt more refreshed. Every detail was taken care of perfectly."</blockquote>
+          <p class="client-name">— Sara M., Defence</p>
+        </div>
+      </div>
+ 
+      <div class="carousel-item">
+        <div class="testimonial-content">
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <blockquote>"The mehndi artist was so talented — the patterns were breathtaking. Highly recommend for any occasion!"</blockquote>
+          <p class="client-name">— Nadia R., Clifton</p>
+        </div>
+      </div>
+ 
+      <div class="carousel-item">
+        <div class="testimonial-content">
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <blockquote>"The spa session was so relaxing. The ambiance was beautiful and the staff was incredibly warm and welcoming."</blockquote>
+          <p class="client-name">— Zara T., Gulshan</p>
+        </div>
+      </div>
+ 
+    </div>
+ 
+    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+ 
+  </div>
+
     <footer>
         <div class="footer-content">
-            <div class="footer-section">
+             <div class="footer-section">
                 <img src="images/whitefontlogo.jpg" alt="" width="140px" height="45px">
             </div>
             <div class="footer-section">
