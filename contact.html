@@ -6,303 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact page</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
 
-    <style>
-        .contact {
-            display: flex;
-            padding: 50px;
-            gap: 40px;
-        }
-
-        .contact-form {
-            flex: 2;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            border: 1px solid #ddd;
-        }
-
-        .contact-form label {
-            font-weight: bold;
-            color: #1a1a1a;
-            display: block;
-            margin-top: 12px;
-            margin-bottom: 4px;
-        }
-
-        .contact-form input,
-        .contact-form textarea,
-        .contact-form select {
-            width: 100%;
-            padding: 12px;
-            margin: 6px 0 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-            color: #1a1a1a;
-            background-color: #fff;
-            box-sizing: border-box;
-            transition: border 0.3s ease;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus,
-        .contact-form select:focus {
-            border-color: #4B6F44;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(75, 111, 68, 0.15);
-        }
-
-        .contact-form select {
-            appearance: none;
-            /* background-repeat: no-repeat;
-            background-position: right 14px center; */
-            cursor: pointer;
-        }
-
-        .submit-btn {
-            background: #4B6F44;
-            color: black;
-            border: none;
-            padding: 15px 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            border-radius: 5px;
-            margin-top: 10px;
-            font-size: 15px;
-        }
-
-        .submit-btn:hover {
-            transform: scale(1.05);
-            background: #3a5534;
-        }
-
-        .contact-info {
-            flex: 1;
-            background: #1a1a1a;
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-        }
-
-        .contact-info h3 {
-            color: #4B6F44;
-            font-size: 20px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #4B6F44;
-            padding-bottom: 8px;
-        }
-
-        .contact-info p {
-            margin: 10px 0;
-            font-size: 14px;
-            line-height: 1.6;
-            color: #e0e0e0;
-        }
-
-        .contact-info strong {
-            color: #4B6F44;
-        }
-
-        .map {
-            width: 100%;
-            height: 200px;
-            background: #ccc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            color: #333;
-            border-radius: 6px;
-            overflow: hidden;
-        }
-
-        h1 {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 60px;
-            letter-spacing: 2px;
-            color: black;
-        }
-
-        .success-message {
-            display: none;
-            background: #f0f7ee;
-            border: 2px solid #4B6F44;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .success-message .checkmark {
-            width: 65px;
-            height: 65px;
-            background: #4B6F44;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px auto;
-            font-size: 30px;
-            color: white;
-        }
-
-        .back-btn {
-            margin-top: 20px;
-            background: #1a1a1a;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
-
-        .back-btn:hover {
-            background: #4B6F44;
-        }
-
-        .error {
-            color: red;
-        }
-
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-
-        /* media queries */
-        /* desktop */
-        @media(max-width:1200px) {
-            .contact {
-                padding: 40px;
-                gap: 30px;
-            }
-
-            h1 {
-                font-size: 50px;
-            }
-        }
-
-        /* laptop */
-        @media(max-width:992px) {
-            .contact {
-                flex-direction: column;
-            }
-
-            .contact-form,
-            .contact-info {
-                width: 100%;
-            }
-
-            .map iframe {
-                width: 100%;
-            }
-
-            nav ul {
-                flex-direction: column;
-                display: none;
-                width: 100%;
-                background: #fff;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                border-top: 1px solid #ddd;
-            }
-
-            nav ul.show {
-                display: flex;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .dropdown:hover .dropdown-menu {
-                position: static;
-            }
-        }
-
-        /* tablet */
-        @media(max-width:768px) {
-            .contact {
-                padding: 30px 20px;
-            }
-
-            h1 {
-                font-size: 40px;
-            }
-
-            .contact-form {
-                padding: 25px;
-            }
-
-            .contact-info {
-                padding: 25px;
-            }
-
-            .submit-btn {
-                width: 100%;
-            }
-        }
-
-        /* <768px Mobile */
-        @media(max-width:576px) {
-            h1 {
-                font-size: 32px;
-                letter-spacing: 1px;
-            }
-
-            .contact {
-                padding: 20px 15px;
-                gap: 20px;
-            }
-
-            .contact-form {
-                padding: 20px;
-            }
-
-            .contact-info {
-                padding: 20px;
-            }
-
-            .contact-form input,
-            .contact-form textarea,
-            .contact-form select {
-                font-size: 13px;
-            }
-
-            .submit-btn {
-                padding: 12px;
-                font-size: 14px;
-            }
-
-            .map iframe {
-                height: 180px;
-            }
-        }
-    </style>
 
 </head>
 
 <body>
     <nav class="navbar">
 
-        <div class="logo">RoopHaus</div>
+        <div class="logo">
+                        <a href="index.html"><img src="images/logo.png" style="width: 100%;" alt=""></a>
+
+        </div>
 
         <ul class="nav-links" id="navLinks">
 
@@ -328,8 +43,11 @@
         <div class="hamburger" onclick="toggleMenu()">☰</div>
 
     </nav>
+    <a href="#top" id="topBtn">^</a>
 
-    <h1>CONTACT US</h1>
+    <header class="contact-header">
+        <h1>CONTACT US</h1>
+    </header>
 
     <div class="contact">
 
@@ -374,7 +92,7 @@
             <div class="map">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.546732148723!2d67.0566487756648!3d24.87932597791689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33eed5d2a946f%3A0x86b0b26ae2d6432b!2sConsulNet%20Corporation!5e0!3m2!1sen!2sus!4v1773715870319!5m2!1sen!2sus"
-                    width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    style="border:0; width: 100%;" allowfullscreen="" loading="lazy"></iframe>
             </div>
 
             <h3>Get In Touch</h3>
@@ -385,10 +103,10 @@
 
     </div>
 
-<footer>
+    <footer>
         <div class="footer-content">
-             <div class="footer-section">
-                <img src="images/whitefontlogo.jpg" alt="" width="140px" height="45px">
+            <div class="footer-section">
+                <img src="images/whitefontlogo.jpg" alt="" >
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
@@ -396,8 +114,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="services.html">Services</a></li>
-
+                    <li><a href="services.html">Services</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -413,7 +130,6 @@
                 <p>Sun: 11:00 AM - 5:00 PM</p>
             </div>
         </div>
-        <hr>
         <div class="footer-bottom">
             <p>&copy; 2026 RoopHause. All Rights Reserved.</p>
         </div>
@@ -422,13 +138,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script>
-
-
-
-
-
-
         function handleSubmit(event) {
             event.preventDefault();
             document.getElementById('salonForm').style.display = 'none';
@@ -455,8 +166,6 @@
             let email = $('#email').val()
 
             let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-
 
             let Valid = true;
             if (name === '') {
@@ -487,7 +196,5 @@
         })
 
     </script>
-
 </body>
-
 </html>
