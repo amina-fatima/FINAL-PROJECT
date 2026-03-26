@@ -1,4 +1,3 @@
-/* index */
 
 
 /* TABLET */
@@ -323,10 +322,23 @@
 }
 
 @media(max-width:992px) {
+    .index-header{
+        flex-direction: column;
+    }
+    .left{
+        width: 100%;
+        padding-left: 0px;
+    }
+    .right{
+        display: none
+    }
 
     .hero-section {
         padding: 60px 40px;
         height: auto;
+    }
+    .hero-section  h1{
+        font-size: 4em;
     }
 
     .about-main {
@@ -366,8 +378,6 @@
     }
 
     .hero-section {
-        padding: 40px 20px;
-        justify-content: center;
         text-align: center;
     }
 
@@ -472,7 +482,6 @@
         left: 0;
         width: 100%;
         background: white;
-        border-top: 1px solid #ddd;
         display: none;
     }
 
@@ -577,7 +586,6 @@
         position: absolute;
         top: 100%;
         left: 0;
-        border-top: 1px solid #ddd;
     }
 
     nav ul.show {
@@ -595,6 +603,12 @@
 
 /* tablet */
 @media(max-width:768px) {
+
+    .dropdown-menu{
+        background-color: white;
+        color: black;
+        border: none;
+    }
     .contact {
         padding: 30px 20px;
     }
@@ -670,11 +684,6 @@
 
 @media(max-width:992px) {
 
-    .hero-section {
-        padding: 60px 40px;
-        height: auto;
-    }
-
     .about-main {
         width: 70%;
     }
@@ -713,7 +722,6 @@
 
     .hero-section {
         padding: 40px 20px;
-        justify-content: center;
         text-align: center;
     }
 

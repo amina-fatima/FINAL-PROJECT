@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact page</title>
+    <title>Contact Page | RoopHause Salon</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
 
@@ -12,6 +14,7 @@
 </head>
 
 <body>
+
     <nav class="navbar">
 
         <div class="logo">
@@ -23,11 +26,11 @@
 
             <li><a href="index.html">Home</a></li>
 
+            <li><a href="gallery.html">Gallery </a> </li>
             <li><a href="about.html">About</a></li>
 
             <li class="dropdown">
-                <a href="services.html">Services ▾</a>
-
+                <a href="#">Services <i class="fa-solid fa-angle-down"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="home-service.html">Home Service</a></li>
                     <li><a href="onsite-service.html">Onsite Service</a></li>
@@ -40,10 +43,12 @@
 
         </ul>
 
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"
+                style="color: rgb(255, 255, 255);"></i></div>
 
     </nav>
-    <a href="#top" id="topBtn">^</a>
+
+    <a href="#top" id="topBtn"><img src="images/up-arrow.png" alt=""></a>
 
     <header class="contact-header">
         <h1>CONTACT US</h1>
@@ -82,7 +87,8 @@
             <div class="success-message" id="successMsg">
                 <div class="checkmark">✓</div>
                 <h2>Message Received!</h2>
-                <p>Thank you for reaching out to us. 🌿</p>
+                <p>Thank you for reaching out to us. <i class="fa-solid fa-leaf" style="color: rgb(21, 151, 110);"></i>
+                </p>
                 <p>Our team will contact you <span>within 24 hours</span>.</p>
                 <button class="back-btn" onclick="resetForm()">Send Another Message</button>
             </div>
@@ -119,9 +125,9 @@
             </div>
             <div class="footer-section">
                 <h3>Contact Info</h3>
-                <p>📍 Karachi, Sindh, Pakistan</p>
-                <p>📞 +92 21 1234 5678</p>
-                <p>📧 info@roophause.com</p>
+                <p><i class="fa-solid fa-location-pin"></i> Karachi, Sindh, Pakistan</p>
+                <p><i class="fa-solid fa-phone"></i> +92 21 1234 5678</p>
+                <p><i class="fa-solid fa-envelope"></i> info@roophause.com</p>
             </div>
             <div class="footer-section">
                 <h3>Hours</h3>
@@ -130,70 +136,16 @@
                 <p>Sun: 11:00 AM - 5:00 PM</p>
             </div>
         </div>
+
         <div class="footer-bottom">
             <p>&copy; 2026 RoopHause. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script>
-        function handleSubmit(event) {
-            event.preventDefault();
-            document.getElementById('salonForm').style.display = 'none';
-            document.getElementById('successMsg').style.display = 'block';
-        }
-
-        function resetForm() {
-            document.getElementById('successMsg').style.display = 'none';
-            let form = document.getElementById('salonForm');
-            form.reset();
-            form.style.display = 'block';
-        }
-
-        function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("show");
-        }
-
-        $('#salonForm').on('submit', function (e) {
-            e.preventDefault();
-
-            const studentId = 0;
-            const name = $('#name').val();
-            const email = $('#email').val();
-
-            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-            const Valid = true;
-            if (name === '') {
-                Valid = false;
-                $('#nameError').text('name is required');
-            } else if (name.length < 3) {
-                Valid = false;
-                $('#nameError').text('Name must be at least 3 characters');
-            } else {
-                // Valid = true;
-                $('#nameError').text('');
-            }
-
-            if (email === '') {
-                Valid = false;
-                $('#emailerror').text('Email is required');
-            } else if (!emailRegex.test(email)) {
-                Valid = false;
-                $('#emailerror').text('Use correct syntax');
-            } else {
-                $('#emailerror').text('');
-            }
-            if (Valid) {
-
-                document.getElementById('salonForm').style.display = 'none';
-                document.getElementById('successMsg').style.display = 'block';
-            }
-        });
-
-    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

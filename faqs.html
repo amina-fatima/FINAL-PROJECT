@@ -4,17 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Frequently Asked Questions</title>
+    <title>Frequently Asked Questions | RoopHause Salon</title>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
-    <style>
-
-
-    </style>
 </head>
 
 <body>
+
 
     <nav class="navbar">
 
@@ -27,11 +25,11 @@
 
             <li><a href="index.html">Home</a></li>
 
+            <li><a href="gallery.html">Gallery </a> </li>
             <li><a href="about.html">About</a></li>
 
             <li class="dropdown">
-                <a href="services.html">Services ▾</a>
-
+                <a href="#">Services <i class="fa-solid fa-angle-down"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="home-service.html">Home Service</a></li>
                     <li><a href="onsite-service.html">Onsite Service</a></li>
@@ -44,10 +42,13 @@
 
         </ul>
 
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"
+                style="color: rgb(255, 255, 255);"></i></div>
 
     </nav>
-    <a href="#top" id="topBtn">^</a>
+
+
+    <a href="#top" id="topBtn"><img src="images/up-arrow.png" alt=""></a>
 
     <!-- faq banner -->
     <div class="banner">
@@ -106,6 +107,7 @@
             </div>
         </div>
     </div>
+
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -118,14 +120,13 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="services.html">Services</a></li>
-
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Contact Info</h3>
-                <p>📍 Karachi, Sindh, Pakistan</p>
-                <p>📞 +92 21 1234 5678</p>
-                <p>📧 info@roophause.com</p>
+                <p><i class="fa-solid fa-location-pin"></i> Karachi, Sindh, Pakistan</p>
+                <p><i class="fa-solid fa-phone"></i> +92 21 1234 5678</p>
+                <p><i class="fa-solid fa-envelope"></i> info@roophause.com</p>
             </div>
             <div class="footer-section">
                 <h3>Hours</h3>
@@ -134,20 +135,16 @@
                 <p>Sun: 11:00 AM - 5:00 PM</p>
             </div>
         </div>
+
         <div class="footer-bottom">
             <p>&copy; 2026 RoopHause. All Rights Reserved.</p>
         </div>
     </footer>
 
+
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
-    <script>$(function () {
-            $("#accordion").accordion();
-        });
-
-        function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("show");
-        }    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onsite Services - RoopHause Salon | Earthly Desi Beauty</title>
+    <title>Onsite Services | RoopHause Salon</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
 
@@ -12,25 +14,22 @@
 
 <body>
 
-
     <nav class="navbar">
 
         <div class="logo">
-<<<<<<< HEAD
             <a href="index.html"><img src="images/whitefontlogo.jpg" style="width: 100%;" alt=""></a>
-=======
-            <a href="index.html"><img src="images/logo.png" style="width: 100%;" alt=""></a>
->>>>>>> 8d306ca12a64ca76bee00764e9005abb75955229
+
         </div>
 
         <ul class="nav-links" id="navLinks">
 
             <li><a href="index.html">Home</a></li>
 
+            <li><a href="gallery.html">Gallery </a> </li>
             <li><a href="about.html">About</a></li>
 
             <li class="dropdown">
-                <a href="#">Services ▾</a>
+                <a href="#">Services <i class="fa-solid fa-angle-down"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="home-service.html">Home Service</a></li>
                     <li><a href="onsite-service.html">Onsite Service</a></li>
@@ -43,12 +42,15 @@
 
         </ul>
 
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"
+                style="color: rgb(255, 255, 255);"></i></div>
 
     </nav>
-    <a href="#top" id="topBtn">^</a>
 
-    <header>
+
+    <a href="#top" id="topBtn"><img src="images/up-arrow.png" alt=""></a>
+
+    <header class="hero-section">
         <h1>Onsite Services</h1>
     </header>
 
@@ -151,46 +153,50 @@
 
 
     <div class="carousel-wrapper">
-    <div class="carousel-track">
+        <div class="carousel-track">
 
-        <div class="carousel-item active">
-            <div class="slider-content">
-                <div class="stars">★ ★ ★ ★ ★</div>
-                <blockquote>"The bridal makeup was absolutely stunning. My stylist was professional and the look lasted
-                    all night!"</blockquote>
-                <p class="client-name">— Ayesha K., Karachi</p>
+            <div class="carousel-item active">
+                <div class="slider-content">
+                    <div class="stars">★ ★ ★ ★ ★</div>
+                    <blockquote>"The bridal makeup was absolutely stunning. My stylist was professional and the look
+                        lasted
+                        all night!"</blockquote>
+                    <p class="client-name">— Ayesha K., Karachi</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="slider-content">
+                    <div class="stars">★ ★ ★ ★ ★</div>
+                    <blockquote>"I got my facial done at the salon and I have never felt more refreshed. Every detail
+                        was
+                        taken care of perfectly."</blockquote>
+                    <p class="client-name">— Sara M., Defence</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="slider-content">
+                    <div class="stars">★ ★ ★ ★ ★</div>
+                    <blockquote>"The mehndi artist was so talented — the patterns were breathtaking. Highly recommend
+                        for
+                        any occasion!"</blockquote>
+                    <p class="client-name">— Nadia R., Clifton</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="slider-content">
+                    <div class="stars">★ ★ ★ ★ ★</div>
+                    <blockquote>"The spa session was so relaxing. The ambiance was beautiful and the staff was
+                        incredibly
+                        warm and welcoming."</blockquote>
+                    <p class="client-name">— Zara T., Gulshan</p>
+                </div>
             </div>
         </div>
-
-        <div class="carousel-item">
-            <div class="slider-content">
-                <div class="stars">★ ★ ★ ★ ★</div>
-                <blockquote>"I got my facial done at the salon and I have never felt more refreshed. Every detail was
-                    taken care of perfectly."</blockquote>
-                <p class="client-name">— Sara M., Defence</p>
-            </div>
-        </div>
-
-        <div class="carousel-item">
-            <div class="slider-content">
-                <div class="stars">★ ★ ★ ★ ★</div>
-                <blockquote>"The mehndi artist was so talented — the patterns were breathtaking. Highly recommend for
-                    any occasion!"</blockquote>
-                <p class="client-name">— Nadia R., Clifton</p>
-            </div>
-        </div>
-
-        <div class="carousel-item">
-            <div class="slider-content">
-                <div class="stars">★ ★ ★ ★ ★</div>
-                <blockquote>"The spa session was so relaxing. The ambiance was beautiful and the staff was incredibly
-                    warm and welcoming."</blockquote>
-                <p class="client-name">— Zara T., Gulshan</p>
-            </div>
-        </div>
-    </div>
-    <button class="carousel-btn btn-prev" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="carousel-btn btn-next" onclick="moveSlide(1)">&#10095;</button>
+        <button class="carousel-btn btn-prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="carousel-btn btn-next" onclick="moveSlide(1)">&#10095;</button>
     </div>
 
     <footer>
@@ -209,9 +215,9 @@
             </div>
             <div class="footer-section">
                 <h3>Contact Info</h3>
-                <p>📍 Karachi, Sindh, Pakistan</p>
-                <p>📞 +92 21 1234 5678</p>
-                <p>📧 info@roophause.com</p>
+                <p><i class="fa-solid fa-location-pin"></i> Karachi, Sindh, Pakistan</p>
+                <p><i class="fa-solid fa-phone"></i> +92 21 1234 5678</p>
+                <p><i class="fa-solid fa-envelope"></i> info@roophause.com</p>
             </div>
             <div class="footer-section">
                 <h3>Hours</h3>
@@ -220,37 +226,16 @@
                 <p>Sun: 11:00 AM - 5:00 PM</p>
             </div>
         </div>
+
         <div class="footer-bottom">
             <p>&copy; 2026 RoopHause. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-
-    <script>       
-     function toggleMenu() {
-            document.querySelector('nav ul').classList.toggle('show');
-        }
-
-
-        let currentIndex = 0;
-
-        const track = document.querySelector('.carousel-track');
-        const items = document.querySelectorAll('.carousel-item');
-
-        function goToSlide(index) {
-            currentIndex = index;
-            track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
-        }
-        function moveSlide(direction) {
-            let total = items.length;
-            currentIndex = (currentIndex + direction + total) % total;
-            goToSlide(currentIndex);
-        }
-    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
