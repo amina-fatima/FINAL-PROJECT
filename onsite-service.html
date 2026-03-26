@@ -16,7 +16,11 @@
     <nav class="navbar">
 
         <div class="logo">
+<<<<<<< HEAD
             <a href="index.html"><img src="images/whitefontlogo.jpg" style="width: 100%;" alt=""></a>
+=======
+            <a href="index.html"><img src="images/logo.png" style="width: 100%;" alt=""></a>
+>>>>>>> 8d306ca12a64ca76bee00764e9005abb75955229
         </div>
 
         <ul class="nav-links" id="navLinks">
@@ -147,50 +151,46 @@
 
 
     <div class="carousel-wrapper">
-        <div class="carousel-track">
+    <div class="carousel-track">
 
-            <div class="carousel-item active">
-                <div class="slider-content">
-                    <div class="stars">★ ★ ★ ★ ★</div>
-                    <blockquote>"The bridal makeup was absolutely stunning. My stylist was professional and the look
-                        lasted
-                        all night!"</blockquote>
-                    <p class="client-name">— Ayesha K., Karachi</p>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="slider-content">
-                    <div class="stars">★ ★ ★ ★ ★</div>
-                    <blockquote>"I got my facial done at the salon and I have never felt more refreshed. Every detail
-                        was
-                        taken care of perfectly."</blockquote>
-                    <p class="client-name">— Sara M., Defence</p>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="slider-content">
-                    <div class="stars">★ ★ ★ ★ ★</div>
-                    <blockquote>"The mehndi artist was so talented — the patterns were breathtaking. Highly recommend
-                        for
-                        any occasion!"</blockquote>
-                    <p class="client-name">— Nadia R., Clifton</p>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="slider-content">
-                    <div class="stars">★ ★ ★ ★ ★</div>
-                    <blockquote>"The spa session was so relaxing. The ambiance was beautiful and the staff was
-                        incredibly
-                        warm and welcoming."</blockquote>
-                    <p class="client-name">— Zara T., Gulshan</p>
-                </div>
+        <div class="carousel-item active">
+            <div class="slider-content">
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <blockquote>"The bridal makeup was absolutely stunning. My stylist was professional and the look lasted
+                    all night!"</blockquote>
+                <p class="client-name">— Ayesha K., Karachi</p>
             </div>
         </div>
-        <button class="carousel-btn btn-prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="carousel-btn btn-next" onclick="moveSlide(1)">&#10095;</button>
+
+        <div class="carousel-item">
+            <div class="slider-content">
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <blockquote>"I got my facial done at the salon and I have never felt more refreshed. Every detail was
+                    taken care of perfectly."</blockquote>
+                <p class="client-name">— Sara M., Defence</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="slider-content">
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <blockquote>"The mehndi artist was so talented — the patterns were breathtaking. Highly recommend for
+                    any occasion!"</blockquote>
+                <p class="client-name">— Nadia R., Clifton</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="slider-content">
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <blockquote>"The spa session was so relaxing. The ambiance was beautiful and the staff was incredibly
+                    warm and welcoming."</blockquote>
+                <p class="client-name">— Zara T., Gulshan</p>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-btn btn-prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="carousel-btn btn-next" onclick="moveSlide(1)">&#10095;</button>
     </div>
 
     <footer>
@@ -228,26 +228,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("show");
-        }
-        var currentIndex = 0;
 
-        var track = document.querySelector('.carousel-track');
-        var items = document.querySelectorAll('.carousel-item');
+
+    <script>       
+     function toggleMenu() {
+            document.querySelector('nav ul').classList.toggle('show');
+        }
+
+
+        let currentIndex = 0;
+
+        const track = document.querySelector('.carousel-track');
+        const items = document.querySelectorAll('.carousel-item');
 
         function goToSlide(index) {
             currentIndex = index;
             track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
         }
-
         function moveSlide(direction) {
-            var total = items.length;
+            let total = items.length;
             currentIndex = (currentIndex + direction + total) % total;
             goToSlide(currentIndex);
         }
-
     </script>
 </body>
 

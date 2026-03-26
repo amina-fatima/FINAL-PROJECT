@@ -158,63 +158,66 @@
     <button class="carousel-btn btn-next" onclick="moveSlide(1)">&#10095;</button>
   </div>
 
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <img src="images/whitefontlogo.jpg" alt="">
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="services.html">Services</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Contact Info</h3>
-        <p>📍 Karachi, Sindh, Pakistan</p>
-        <p>📞 +92 21 1234 5678</p>
-        <p>📧 info@roophause.com</p>
-      </div>
-      <div class="footer-section">
-        <h3>Hours</h3>
-        <p>Mon-Fri: 9:00 AM - 8:00 PM</p>
-        <p>Sat: 10:00 AM - 6:00 PM</p>
-        <p>Sun: 11:00 AM - 5:00 PM</p>
-      </div>
-    </div>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src="images/whitefontlogo.jpg" alt="" >
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="services.html">Services</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <p>📍 Karachi, Sindh, Pakistan</p>
+          <p>📞 +92 21 1234 5678</p>
+          <p>📧 info@roophause.com</p>
+        </div>
+        <div class="footer-section">
+          <h3>Hours</h3>
+          <p>Mon-Fri: 9:00 AM - 8:00 PM</p>
+          <p>Sat: 10:00 AM - 6:00 PM</p>
+          <p>Sun: 11:00 AM - 5:00 PM</p>
+        </div>
+              </div>
 
-    <div class="footer-bottom">
-      <p>&copy; 2026 RoopHause. All Rights Reserved.</p>
-    </div>
-  </footer>
+        <div class="footer-bottom">
+          <p>&copy; 2026 RoopHause. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script>
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("show");
-    }
-    var currentIndex = 0;
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    var track = document.querySelector('.carousel-track');
-    var items = document.querySelectorAll('.carousel-item');
+    <script>
+      
+      function toggleMenu() {
+        document.querySelector('nav ul').classList.toggle('show');
+      }
 
-    function goToSlide(index) {
-      currentIndex = index;
-      track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
-    }
 
-    function moveSlide(direction) {
-      var total = items.length;
-      currentIndex = (currentIndex + direction + total) % total;
-      goToSlide(currentIndex);
-    }
 
-  </script>
+      let currentIndex = 0;
+
+      const track = document.querySelector('.carousel-track');
+      const items = document.querySelectorAll('.carousel-item');
+
+      function goToSlide(index) {
+        currentIndex = index;
+        track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+      }
+      function moveSlide(direction) {
+        var total = items.length;
+        currentIndex = (currentIndex + direction + total) % total;
+        goToSlide(currentIndex);
+      }
+    </script>
 
 </body>
 

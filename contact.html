@@ -138,6 +138,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script>
         function handleSubmit(event) {
             event.preventDefault();
@@ -147,7 +148,7 @@
 
         function resetForm() {
             document.getElementById('successMsg').style.display = 'none';
-            var form = document.getElementById('salonForm');
+            let form = document.getElementById('salonForm');
             form.reset();
             form.style.display = 'block';
         }
@@ -159,13 +160,13 @@
         $('#salonForm').on('submit', function (e) {
             e.preventDefault();
 
-            var studentId = 0;
-            var name = $('#name').val();
-            var email = $('#email').val();
+            const studentId = 0;
+            const name = $('#name').val();
+            const email = $('#email').val();
 
-            var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-            var Valid = true;
+            const Valid = true;
             if (name === '') {
                 Valid = false;
                 $('#nameError').text('name is required');
@@ -195,5 +196,4 @@
 
     </script>
 </body>
-
 </html>

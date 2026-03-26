@@ -33,32 +33,8 @@
 }
 
 
-/* MOBILE */
 
-/* @media (max-width:768px) {
 
-    .hamburger {
-        display: block;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        align-items: center;
-        display: none;
-        padding: 20px 0;
-    }
-    .nav-links a {
-        color: black;
-    }
-
-    .nav-links.show {
-        display: flex;
-    } */
 /* MOBILE (max 768px) */
 @media (max-width: 768px) {
     .hamburger {
@@ -130,14 +106,6 @@
     .faqline {
         font-size: 20px;
     }
-
-
-
-
-
-
-
-
 
 
 

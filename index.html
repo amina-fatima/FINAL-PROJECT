@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="responsive.css">
-
-
 </head>
 
 
@@ -49,7 +47,7 @@
 
 
     <!-- home main section -->
-    <header class="index-header">
+    <header class="index-header"  >
 
         <div class="left">
 
@@ -267,26 +265,26 @@
     <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
     <script>
 
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("show");
-    }
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("show");
+        }
 
 
 
-$(function () {
+        $(function () {
 
-    $("#accordion").accordion();
+            $("#accordion").accordion();
 
-    setTimeout(function () {
+            setTimeout(function () {
 
-        $(".faqmain").css({
-            "opacity": "1",
-            "transform": "translateY(0)"
+                $(".faqmain").css({
+                    "opacity": "1",
+                    "transform": "translateY(0)"
+                });
+
+            }, 100);
+
         });
-
-    }, 100);
-
-});
 
     </script>
 
