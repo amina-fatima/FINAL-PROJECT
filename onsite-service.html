@@ -16,7 +16,11 @@
     <nav class="navbar">
 
         <div class="logo">
+<<<<<<< HEAD
+            <a href="index.html"><img src="images/whitefontlogo.jpg" style="width: 100%;" alt=""></a>
+=======
             <a href="index.html"><img src="images/logo.png" style="width: 100%;" alt=""></a>
+>>>>>>> 8d306ca12a64ca76bee00764e9005abb75955229
         </div>
 
         <ul class="nav-links" id="navLinks">
@@ -225,6 +229,7 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+
     <script>       
      function toggleMenu() {
             document.querySelector('nav ul').classList.toggle('show');
@@ -241,7 +246,7 @@
             track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
         }
         function moveSlide(direction) {
-            var total = items.length;
+            let total = items.length;
             currentIndex = (currentIndex + direction + total) % total;
             goToSlide(currentIndex);
         }

@@ -15,7 +15,7 @@
     <nav class="navbar">
 
         <div class="logo">
-                        <a href="index.html"><img src="images/logo.png" style="width: 100%;" alt=""></a>
+            <a href="index.html"><img src="images/whitefontlogo.jpg" style="width: 100%;" alt=""></a>
 
         </div>
 
@@ -106,7 +106,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <img src="images/whitefontlogo.jpg" alt="" >
+                <img src="images/whitefontlogo.jpg" alt="">
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
@@ -148,52 +148,51 @@
 
         function resetForm() {
             document.getElementById('successMsg').style.display = 'none';
-            const form = document.getElementById('salonForm');
+            let form = document.getElementById('salonForm');
             form.reset();
             form.style.display = 'block';
         }
 
         function toggleMenu() {
-            document.querySelector('nav ul').classList.toggle('show');
+            document.getElementById("navLinks").classList.toggle("show");
         }
-
 
         $('#salonForm').on('submit', function (e) {
             e.preventDefault();
 
-            let studentId = 0;
-            let name = $('#name').val()
-            let email = $('#email').val()
+            const studentId = 0;
+            const name = $('#name').val();
+            const email = $('#email').val();
 
-            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-            let Valid = true;
+            const Valid = true;
             if (name === '') {
                 Valid = false;
-                $('#nameError').text('name is required')
+                $('#nameError').text('name is required');
             } else if (name.length < 3) {
                 Valid = false;
-                $('#nameError').text('Name must be at least 3 characters')
+                $('#nameError').text('Name must be at least 3 characters');
             } else {
                 // Valid = true;
-                $('#nameError').text('')
+                $('#nameError').text('');
             }
 
             if (email === '') {
                 Valid = false;
                 $('#emailerror').text('Email is required');
             } else if (!emailRegex.test(email)) {
-                Valid = false
-                $('#emailerror').text('Use correct syntax')
+                Valid = false;
+                $('#emailerror').text('Use correct syntax');
             } else {
-                $('#emailerror').text('')
+                $('#emailerror').text('');
             }
             if (Valid) {
 
                 document.getElementById('salonForm').style.display = 'none';
                 document.getElementById('successMsg').style.display = 'block';
             }
-        })
+        });
 
     </script>
 </body>
